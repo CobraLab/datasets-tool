@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+""" Datasets data provenance and management tool.
+
+Usage: 
+    datasets [inventory [<pattern>]]
+    datasets info [-v | --verbose] <pattern>
+    datasets get (link | copy | archive) <unique-pattern>
+    datasets import
+    datasets search [-r | --regex] [-v | --verbose] <pattern>
+    datasets check [<pattern>]
+    datasets rebuild [<pattern>]
+    datasets -h | --help
+    datasets --version
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+"""
+from docopt import docopt
+
+
+if __name__ == '__main__':
+    arguments = docopt(__doc__, version='datasets 0.1')
+    print(arguments)
