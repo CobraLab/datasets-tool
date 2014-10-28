@@ -18,8 +18,43 @@ Options:
   --version     Show version.
 """
 from docopt import docopt
+import os
+import re
+
+DATASETS_ROOT   = '/data/chamal/datasets'
+
+class dataset(object):
+    """
+    dataset class, an instance of a dataset and all possible operations
+    """
+    def __init__(self, root):
+        self.root = root
+        pass
+
+    def inventory(self, pattern):
+        pass
+
+    def info(self, pattern, verbose):
+        pass
+
+    def get(self, uniquepattern, action):
+        pass
+
+    def dataimport(self):
+        pass
+
+    def search(self, pattern, verbose, regex):
+        pass
+
+    def check(self, pattern = None):
+        pass
+
+    def rebuild(self, pattern = None):
+        pass
 
 
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='datasets 0.1')
     print(arguments)
+
+    
