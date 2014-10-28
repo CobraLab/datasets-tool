@@ -5,7 +5,7 @@
 Usage: 
     datasets [inventory [<pattern>]]
     datasets info [-v | --verbose] <pattern>
-    datasets get (link | copy | archive) <unique-pattern>
+    datasets get (link | copy | archive) <unique-pattern> [subjects.csv]
     datasets import
     datasets search [-r | --regex] [-v | --verbose] <pattern>
     datasets check [<pattern>]
@@ -31,25 +31,32 @@ class dataset(object):
         self.root = root
         pass
 
-    def inventory(self, pattern):
+    def inventory(self, pattern = None):
+        """Dumps to STDIO a unix-tree of data in the dataset, optionally filtered by pattern"""
         pass
 
     def info(self, pattern, verbose):
+        """Prints out README.yml headers for matching patterns, optionally the whole README.yml"""
         pass
 
-    def get(self, uniquepattern, action):
+    def get(self, uniquepattern, action, subjects = None):
+        """Gets the data matching uniquepattern, as a link, copy or archive, optionally filters by subjects.csv"""
         pass
 
     def dataimport(self):
+        """Imports data into dataset by parsing local README.yml to determine tree location"""
         pass
 
     def search(self, pattern, verbose, regex):
+        """Searches contents of README.yml files as dumb pattern or regex, prints inventory results, alternately prints README.yml as well"""
         pass
 
     def check(self, pattern = None):
+        """Checks consistency of dataset by comparing hiarchy of date_last_updated contents"""
         pass
 
     def rebuild(self, pattern = None):
+        """Rebuilds dataset by running update_command progressively down the tree"""
         pass
 
 
